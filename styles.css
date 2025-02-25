@@ -62,7 +62,7 @@ body {
 .hero {
     width: 100%;
     height: 90vh;
-    background: url('img/hero.jpg') center/cover no-repeat;
+    background: url('https://github.com/Abhi8485/BrandWebsite/blob/59728006bd542ebd377ab9691ae600db00230824/img/hero.jpg') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
