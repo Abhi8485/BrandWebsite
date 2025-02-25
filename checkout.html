@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Sneakers</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <style>
+        /* Hover effects */
+        .hover-effect:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md py-4 px-6 fixed w-full top-0 z-10">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <!-- Logo -->
+            <a href="index.html" class="text-2xl font-bold text-black">HYPE</a>
+
+            <!-- Menu Items -->
+            <div class="hidden md:flex space-x-6 text-lg">
+                <a href="index.html" class="hover:text-gray-500">Home</a>
+                <a href="shop.html" class="hover:text-gray-500">Shop</a>
+                <a href="about.html" class="hover:text-gray-500">About</a>
+                <a href="contact.html" class="hover:text-gray-500">Contact</a>
+            </div>
+
+            <!-- Icons -->
+            <div class="flex space-x-4">
+                <a href="cart.html" class="text-xl hover:text-gray-500"><i class="fas fa-shopping-cart"></i></a>
+                <a href="profile.html" class="text-xl hover:text-gray-500"><i class="fas fa-user"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="w-full h-screen flex flex-col md:flex-row">
+        
+        <!-- Left: Product Images -->
+        <div class="md:w-1/2 flex flex-col justify-center items-center bg-white p-6">
+            <img id="mainImage" class="w-full max-w-xl h-96 object-cover rounded-lg shadow-md hover-effect" src="" alt="Sneaker Image">
+            
+            <!-- Image Thumbnails -->
+            <div class="grid grid-cols-4 gap-4 mt-4">
+                <img onclick="changeImage(this)" class="thumbnail w-24 h-24 object-cover cursor-pointer rounded-md shadow-md hover-effect" src="" alt="">
+                <img onclick="changeImage(this)" class="thumbnail w-24 h-24 object-cover cursor-pointer rounded-md shadow-md hover-effect" src="" alt="">
+                <img onclick="changeImage(this)" class="thumbnail w-24 h-24 object-cover cursor-pointer rounded-md shadow-md hover-effect" src="" alt="">
+                <img onclick="changeImage(this)" class="thumbnail w-24 h-24 object-cover cursor-pointer rounded-md shadow-md hover-effect" src="" alt="">
+            </div>
+        </div>
+
+        <!-- Right: Product Details -->
+        <div class="md:w-1/2 flex flex-col justify-center px-10">
+            <div class="text-sm text-gray-500">MEN</div>
+            <h1 id="productName" class="text-4xl font-bold mt-2"></h1>
+            <h2 id="productColor" class="text-lg text-gray-700 mt-1"></h2>
+            <div id="productPrice" class="text-2xl font-semibold mt-2"></div>
+            <div class="text-sm text-gray-500">MRP Inclusive Of All Taxes</div>
+
+            <!-- Size Selection -->
+            <div class="mt-6">
+                <div class="text-sm text-gray-500">UK SIZE</div>
+                <div class="flex space-x-3 mt-2">
+                    <button class="px-6 py-3 border border-gray-300 text-lg hover:bg-gray-200 hover-effect">7</button>
+                    <button class="px-6 py-3 border border-gray-300 text-lg hover:bg-gray-200 hover-effect">8</button>
+                    <button class="px-6 py-3 border border-gray-300 text-lg hover:bg-gray-200 hover-effect">9</button>
+                    <button class="px-6 py-3 border border-gray-300 text-lg hover:bg-gray-200 hover-effect">10</button>
+                    <button class="px-6 py-3 border border-gray-300 text-lg hover:bg-gray-200 hover-effect">11</button>
+                    <button class="px-6 py-3 border border-gray-300 text-lg hover:bg-gray-200 hover-effect">12</button>
+                </div>
+                <a class="text-sm text-gray-500 mt-2 inline-block" href="#">SIZE GUIDE</a>
+            </div>
+
+            <!-- Product Description -->
+            <div id="productDescription" class="mt-6 text-gray-700 text-lg"></div>
+
+            <!-- Buttons -->
+            <div class="mt-6 flex space-x-4">
+                <button class="flex-1 bg-black text-white py-4 text-xl font-semibold hover:bg-gray-800 hover-effect">ADD TO BAG</button>
+                <button class="flex-1 border border-gray-300 py-4 text-xl font-semibold hover:bg-gray-200 hover-effect">ADD TO WISHLIST</button>
+                <button class="flex-1 border border-gray-300 py-4 text-xl font-semibold hover:bg-gray-200 hover-effect">FIND IN STORE</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Product Data
+        const products = {
+            1: {
+                name: "Nike Dunk Low LX",
+                color: "White/Multicolor/Light Smoke Grey",
+                price: "₹ 12,999",
+                images: [
+                    "img/sneaker1-1.jpg",
+                    "img/sneaker1-2.jpg",
+                    "img/sneaker1-3.jpg",
+                    "img/sneaker1-4.jpg"
+                ],
+                description: `
+                    <p>Premium leather construction with iconic Dunk silhouette. Durable and stylish for everyday wear.</p>
+                    <ul class="list-disc list-inside mt-2">
+                        <li>High-quality leather upper for a premium look.</li>
+                        <li>Responsive cushioning for comfort.</li>
+                        <li>Rubber outsole for superior grip.</li>
+                    </ul>
+                `
+            },
+            2: {
+                name: "Air Jordan 1 Retro",
+                color: "Black/Red/White",
+                price: "₹ 18,499",
+                images: [
+                    "img/sneaker2-1.jpg",
+                    "img/sneaker2-2.jpg",
+                    "img/sneaker2-3.jpg",
+                    "img/sneaker2-4.jpg"
+                ],
+                description: `
+                    <p>Classic Air Jordan with timeless style and premium materials.</p>
+                    <ul class="list-disc list-inside mt-2">
+                        <li>Leather and synthetic materials in the upper.</li>
+                        <li>Encapsulated Air-Sole unit for lightweight cushioning.</li>
+                        <li>Rubber outsole with pivot circle for traction.</li>
+                    </ul>
+                `
+            },
+            3: {
+                name: "Yeezy Boost 350 V2",
+                color: "Beige/Black/White",
+                price: "₹ 22,999",
+                images: [
+                    "img/sneaker3-1.jpg",
+                    "img/sneaker3-2.jpg",
+                    "img/sneaker3-3.jpg",
+                    "img/sneaker3-4.jpg"
+                ],
+                description: `
+                    <p>Lightweight Primeknit upper and Boost cushioning for unparalleled comfort.</p>
+                    <ul class="list-disc list-inside mt-2">
+                        <li>Flexible Primeknit upper adapts to your foot.</li>
+                        <li>Boost midsole for responsive energy return.</li>
+                        <li>Ribbed outsole for durability and traction.</li>
+                    </ul>
+                `
+            }
+        };
+
+        // Get Product ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get("sneaker");
+
+        if (products[productId]) {
+            const product = products[productId];
+
+            // Update page with product details
+            document.getElementById("productName").innerText = product.name;
+            document.getElementById("productColor").innerText = product.color;
+            document.getElementById("productPrice").innerText = product.price;
+            document.getElementById("productDescription").innerHTML = product.description;
+            
+            // Update images
+            document.getElementById("mainImage").src = product.images[0];
+            document.querySelectorAll(".thumbnail").forEach((img, index) => {
+                img.src = product.images[index];
+                img.alt = product.name;
+            });
+        }
+
+        // Function to change main image
+        function changeImage(element) {
+            document.getElementById("mainImage").src = element.src;
+        }
+    </script>
+
+</body>
+</html>
+

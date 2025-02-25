@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HYPE - Sneaker Reseller</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loading-screen">
+        <div class="loading-content">
+            <h1 class="loading-text">HYPE</h1>
+            <div class="loading-bar"></div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <h1 class="text-2xl font-bold">HYPE</h1>
+        <div class="dropdown">
+            <button class="text-white">Menu ▼</button>
+            <div class="dropdown-content p-2 rounded">
+                <a href="index.html" class="block p-2 hover:bg-gray-700">Home</a>
+                <a href="#products" class="block p-2 hover:bg-gray-700">Products</a>
+                <a href="about.html" class="block p-2 hover:bg-gray-700">About</a>
+                <a href="contact.html" class="block p-2 hover:bg-gray-700">Contact</a>
+            </div>
+        </div>
+    </header>
+<!-- cover Section -->
+    <section class="cover">
+        <div class="cover-content">
+            <img src="img/main-cover.jpg" alt="cover"></div>
+            </section>            
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Step Into the HYPE</h1>
+            <p>Your destination for exclusive and authentic sneakers.</p>
+            <a href="#products" class="hero-btn">Shop Now</a>
+        </div>
+    </section>
+    <!-- Products Section -->
+    <section id="products" class="products text-center py-12">
+        <h2 class="text-3xl font-bold mb-6">Featured Sneakers</h2>
+        <div class="product-grid grid grid-cols-1 md:grid-cols-3 gap-6 px-6">
+            
+            <!-- Product 1 -->
+            <a href="checkout.html?sneaker=1" class="product bg-gray-900 p-4 rounded-lg shadow-lg transition hover:scale-105">
+                <img src="img/sneaker1-1.jpg" alt="Sneaker 1" class="w-full rounded-md">
+                <h3 class="text-lg font-semibold mt-2">Nike Dunk Low LX</h3>
+                <p class="text-gray-400">$150</p>
+            </a>
+    
+            <!-- Product 2 -->
+            <a href="checkout.html?sneaker=2" class="product bg-gray-900 p-4 rounded-lg shadow-lg transition hover:scale-105">
+                <img src="img/sneaker2-1.jpg" alt="Sneaker 2" class="w-full rounded-md">
+                <h3 class="text-lg font-semibold mt-2">Air Jordan 1 Retro</h3>
+                <p class="text-gray-400">$180</p>
+            </a>
+    
+            <!-- Product 3 -->
+            <a href="checkout.html?sneaker=3" class="product bg-gray-900 p-4 rounded-lg shadow-lg transition hover:scale-105">
+                <img src="img/sneaker3-1.jpg" alt="Sneaker 3" class="w-full rounded-md">
+                <h3 class="text-lg font-semibold mt-2">Yeezy Boost 350 V2</h3>
+                <p class="text-gray-400">$220</p>
+            </a>
+    
+        </div>
+    </section>
+    
+    
+    
+    
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 HYPE. All Rights Reserved.</p>
+    </footer>
+   
+    
+<script>
+        window.addEventListener("load", () => {
+            setTimeout(() => {
+                document.getElementById("loading-screen").classList.add("hide");
+            }, 2500); // 2.5 sec delay
+        });
+    </script>
+</body>
+</html>
